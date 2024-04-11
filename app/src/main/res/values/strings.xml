@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">practiceApp</string>
+    <string name="image1">doctor</string>
+    <string name="image2">circle01</string>
+    <string name="image3">circle2</string>
+    <string name="image4">login-background</string>
+    <string name="password">Password</string>
+    <string name="username" translatable="true">Username</string>
+    <string name="login" translatable="true">Login</string>
+</resources>
