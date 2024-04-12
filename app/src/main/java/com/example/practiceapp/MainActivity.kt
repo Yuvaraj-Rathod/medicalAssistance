@@ -1,5 +1,6 @@
 package com.example.practiceapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -8,12 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     lateinit var userInput : EditText
     lateinit var passwordInput : EditText
     lateinit var loginButton: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             userInput = findViewById(R.id.username_input)
             passwordInput= findViewById(R.id.password_input)
             loginButton= findViewById(R.id.login_btn)
+        val signupTextButton= findViewById<TextView>(R.id.signup_text_btn)
 
             loginButton.setOnClickListener{
                 val username  =userInput.text.toString()
@@ -40,6 +44,11 @@ class MainActivity : AppCompatActivity() {
                     if (username.length > 6 && !username.containsDigits()) {
                         if (password.length > 6 && password.containsDigits() && password.containsCharacters()) {
                             Log.i("test credentials", "username:$username and password:$password")
+                            signupTextButton.setOnClickListener{
+//                                Toast.makeText(this, "buttons working", Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this, signUpPage::class.java)
+                                startActivity(intent)
+                            }
                         } else {
                             when {
                                 password.length <= 6 -> {
@@ -63,7 +72,11 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
+
+
             }
+
+
     }
 }
 fun String.containsDigits(): Boolean {

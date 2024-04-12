@@ -7,4 +7,9 @@
     <string name="password">Password</string>
     <string name="username" translatable="true">Username</string>
     <string name="login" translatable="true">Login</string>
+    <string name="signup">SignUp</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="email">Email</string>
+    <string name="msg_to_login">Already have an account?</string>
+    <string name="msg_to_signup">dont have any account?</string>
 </resources>
